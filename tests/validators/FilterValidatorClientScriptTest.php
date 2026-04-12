@@ -73,6 +73,23 @@ final class FilterValidatorClientScriptTest extends TestCase
         );
     }
 
+    public function testRegisterWithFullyQualifiedTrimFilter(): void
+    {
+        $validator = Yii::createObject(['class' => FilterValidator::class, 'filter' => '\trim']);
+
+        $model = FakedValidationModel::createWithAttributes(['attr_trim' => '  test  ']);
+
+        $js = $validator->clientScript->register($validator, $model, 'attr_trim', Yii::$app->view);
+
+        self::assertSame(
+            <<<'JS'
+            value = yii.validation.trim($form, attribute, [], value);
+            JS,
+            $js,
+            "Should return correct 'trim' validation script for fully-qualified '\\trim' callable.",
+        );
+    }
+
     public function testRegisterWithTrimFilter(): void
     {
         $validator = Yii::createObject(['class' => FilterValidator::class, 'filter' => 'trim']);

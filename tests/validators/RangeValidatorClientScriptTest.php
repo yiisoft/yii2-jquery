@@ -169,13 +169,13 @@ final class RangeValidatorClientScriptTest extends TestCase
             "Should return correct options 'array'.",
         );
 
-        $errorMessage = null;
+        $modelValidator->attrA = 'someIncorrectValue';
 
-        $validator->validate('someIncorrectValue', $errorMessage);
+        $validator->validateAttribute($modelValidator, 'attrA');
 
         self::assertSame(
-            'the input value is invalid.',
-            $errorMessage,
+            ['attrA is invalid.'],
+            $modelValidator->getErrors('attrA'),
             'Error message should match expected output.',
         );
     }

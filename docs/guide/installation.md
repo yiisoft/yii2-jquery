@@ -16,8 +16,8 @@ The preferred way to install this extension is through [Composer](https://getcom
 
 Either run
 
-```
-php composer.phar require --prefer-dist yiisoft/yii2-jquery
+```bash
+composer require --prefer-dist yiisoft/yii2-jquery
 ```
 
 or add
@@ -32,7 +32,7 @@ or add
 
 to the `require` section of your `composer.json` file, then run:
 
-```
+```bash
 composer update
 ```
 

@@ -35,9 +35,13 @@ class RangeValidatorClientScript extends BaseObject implements ClientValidatorSc
      */
     public function getClientOptions(Validator $validator, Model $model, string $attribute): array
     {
+        $rawRange = $validator->range instanceof Closure
+            ? ($validator->range)($model, $attribute)
+            : $validator->range;
+
         $range = [];
 
-        foreach ($validator->range as $value) {
+        foreach ($rawRange as $value) {
             $range[] = $value;
         }
 
@@ -63,10 +67,6 @@ class RangeValidatorClientScript extends BaseObject implements ClientValidatorSc
 
     public function register(Validator $validator, Model $model, string $attribute, View $view): string
     {
-        if ($validator->range instanceof Closure) {
-            $validator->range = ($validator->range)($model, $attribute);
-        }
-
         ValidationAsset::register($view);
 
         $options = $this->getClientOptions($validator, $model, $attribute);

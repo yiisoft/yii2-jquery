@@ -2,7 +2,7 @@ Basic usage and examples
 ========================
 
 Once [`\yii\jquery\Bootstrap`](configuration.md) is registered, every supported validator, grid component, and widget
-is automatically wired with its jQuery-backed `$clientScript`. For most applications, no further action is required 
+is automatically wired with its jQuery-backed `$clientScript`. For most applications, no further action is required.
 `ActiveForm`, `GridView`, `Captcha`, and client-side validation all behave as before.
 
 This chapter shows how to *override* a single jQuery implementation with a custom one, using the strategy-pattern entry 

@@ -17,7 +17,7 @@ permissions:
 
 jobs:
   phpunit:
-    uses: yiisoft/yii2-actions/.github/workflows/phpunit.yml@v1
+    uses: yiisoft/yii2-actions/.github/workflows/phpunit.yml@master
     secrets:
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
     with:

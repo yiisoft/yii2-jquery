@@ -29,7 +29,8 @@ What the bootstrap configures
 `\yii\jquery\Bootstrap` registers the following mappings as DI container defaults. Each listed component is instantiated
 with its `clientScript` property pre-set to the matching jQuery implementation:
 
-### Validators
+Validators
+----------
 
 | Core validator                          | jQuery client script                                            |
 | --------------------------------------- | --------------------------------------------------------------- |
@@ -48,21 +49,24 @@ with its `clientScript` property pre-set to the matching jQuery implementation:
 | `yii\validators\TrimValidator`          | `yii\jquery\validators\TrimValidatorClientScript`         |
 | `yii\validators\UrlValidator`           | `yii\jquery\validators\UrlValidatorClientScript`          |
 
-### Captcha
+Captcha
+-------
 
 | Core component                   | jQuery client script                                         |
 | -------------------------------- | ------------------------------------------------------------ |
 | `yii\captcha\Captcha`            | `yii\jquery\captcha\CaptchaClientScript`               |
 | `yii\captcha\CaptchaValidator`   | `yii\jquery\captcha\CaptchaValidatorClientScript`      |
 
-### Grid
+Grid
+----
 
 | Core component                   | jQuery client script                                         |
 | -------------------------------- | ------------------------------------------------------------ |
 | `yii\grid\CheckboxColumn`        | `yii\jquery\grid\CheckboxColumnClientScript`           |
 | `yii\grid\GridView`              | `yii\jquery\grid\GridViewClientScript`                 |
 
-### Widgets
+Widgets
+-------
 
 | Core component                   | jQuery client script                                         |
 | -------------------------------- | ------------------------------------------------------------ |

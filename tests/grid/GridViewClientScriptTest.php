@@ -266,6 +266,29 @@ final class GridViewClientScriptTest extends TestCase
         );
     }
 
+    public function testRegisterWithAdditionalFilterSelectorWhenFilterRowIdIsEmpty(): void
+    {
+        $config = [
+            'id' => 'test-grid',
+            'dataProvider' => new ArrayDataProvider(['allModels' => []]),
+            'filterUrl' => '/test/filter',
+            'filterSelector' => '#custom-filter input',
+            'options' => ['id' => 'test-grid'],
+            'filterRowOptions' => ['id' => ''],
+        ];
+
+        $gridView = Yii::createObject(['class' => GridView::class, ...$config]);
+
+        self::assertSame(
+            [
+                'filterUrl' => '/test/filter',
+                'filterSelector' => '#custom-filter input',
+            ],
+            $gridView->clientScript->getClientOptions($gridView),
+            'Should use only additionalFilterSelector when filterRowOptions id is empty.',
+        );
+    }
+
     public function testRegisterWithOverrideFilterSelector(): void
     {
         $config = [

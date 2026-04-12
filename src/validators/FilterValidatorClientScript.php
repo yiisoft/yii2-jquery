@@ -45,7 +45,7 @@ class FilterValidatorClientScript extends BaseObject implements ClientValidatorS
 
     public function register(Validator $validator, Model $model, string $attribute, View $view): string
     {
-        if ($validator->filter !== 'trim') {
+        if ($validator->filter !== 'trim' && $validator->filter !== '\trim') {
             return '';
         }
 

@@ -49,7 +49,10 @@ class UrlValidatorClientScript extends BaseObject implements ClientValidatorScri
                 '{schemes}',
                 '(' . implode(
                     '|',
-                    array_map(strval(...), $validator->validSchemes),
+                    array_map(
+                        static fn(mixed $scheme): string => preg_quote((string) $scheme, '/'),
+                        $validator->validSchemes,
+                    ),
                 ) . ')',
                 $validator->pattern,
             );

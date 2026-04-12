@@ -17,6 +17,7 @@ use yii\captcha\CaptchaAsset;
 use yii\jquery\captcha\CaptchaClientScript;
 use yii\jquery\tests\data\controllers\SiteController;
 use yii\jquery\tests\TestCase;
+use yii\web\View;
 
 /**
  * Unit tests for {@see CaptchaClientScript} jQuery client-side script.
@@ -82,7 +83,7 @@ final class CaptchaClientScriptTest extends TestCase
             'Should register CaptchaAsset.',
         );
 
-        $js = implode('', $view->js[4] ?? []);
+        $js = implode('', $view->js[View::POS_READY] ?? []);
 
         self::assertSame(
             <<<'JS'
