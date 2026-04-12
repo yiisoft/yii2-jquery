@@ -1,5 +1,5 @@
 *
 !.gitignore
 !assets/
-!assets/.gitkeep
 assets/*
+!assets/.gitkeep

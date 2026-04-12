@@ -35,6 +35,7 @@ class RangeValidatorClientScript extends BaseObject implements ClientValidatorSc
      */
     public function getClientOptions(Validator $validator, Model $model, string $attribute): array
     {
+        /** @var iterable<int, mixed> $rawRange */
         $rawRange = $validator->range instanceof Closure
             ? ($validator->range)($model, $attribute)
             : $validator->range;
