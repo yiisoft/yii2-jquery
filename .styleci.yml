@@ -1,0 +1,32 @@
+preset: psr12
+risky: true
+
+finder:
+  exclude:
+    - docs
+    - vendor
+
+enabled:
+  - alpha_ordered_traits
+  - array_indentation
+  - declare_strict_types
+  - hash_to_slash_comment
+  - integer_literal_case
+  - magic_constant_casing
+  - magic_method_casing
+  - native_function_casing
+  - native_function_type_declaration_casing
+  - no_empty_comment
+  - no_empty_phpdoc
+  - no_empty_statement
+  - no_extra_block_blank_lines
+  - no_unused_imports
+  - no_unused_lambda_imports
+  - normalize_index_brace
+  - short_array_syntax
+  - single_quote
+  - standardize_not_equals
+  - trailing_comma_in_multiline_array
+  - unalign_double_arrow
+  - unalign_equals
+  - union_type_without_spaces
