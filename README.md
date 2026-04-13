@@ -80,6 +80,11 @@ public function rules(): array
 }
 ```
 
+## Quality code
+
+[![PHPStan Level](https://img.shields.io/badge/PHPStan-Level%205-4F5D95.svg?style=for-the-badge&logo=php&logoColor=white)](https://github.com/yii2-framework/jquery/actions/workflows/static.yml)
+[![StyleCI](https://img.shields.io/badge/StyleCI-Passed-44CC11.svg?style=for-the-badge&logo=styleci&logoColor=white)](https://github.styleci.io/repos/1053295485?branch=main)
+
 ## Documentation
 
 - [Installation Guide](docs/guide/installation.md)
