@@ -30,9 +30,3 @@ enabled:
   - unalign_double_arrow
   - unalign_equals
   - union_type_without_spaces
-
-disabled:
-  - function_declaration
-  - new_with_parentheses
-  - psr12_braces
-  - psr12_class_definition
