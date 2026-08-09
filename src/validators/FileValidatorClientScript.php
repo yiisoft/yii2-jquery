@@ -36,21 +36,7 @@ use function strval;
 class FileValidatorClientScript extends BaseObject implements ClientValidatorScriptInterface
 {
     /**
-     * @return array{
-     *   message?: string,
-     *   skipOnEmpty: bool,
-     *   uploadRequired?: string,
-     *   mimeTypes?: list<JsExpression>,
-     *   wrongMimeType?: string,
-     *   extensions?: list<string>,
-     *   wrongExtension?: string,
-     *   minSize?: int,
-     *   tooSmall?: string,
-     *   maxSize?: int,
-     *   tooBig?: string,
-     *   maxFiles?: int,
-     *   tooMany?: string,
-     * }
+     * @return array<string, bool|int|list<JsExpression|string>|string>
      */
     public function getClientOptions(Validator $validator, Model $model, string $attribute): array
     {
