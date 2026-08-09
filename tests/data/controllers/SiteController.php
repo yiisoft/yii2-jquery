@@ -24,7 +24,10 @@ final class SiteController extends Controller
     public function actions(): array
     {
         return [
-            'captcha' => ['class' => CaptchaAction::class],
+            'captcha' => [
+                'class' => CaptchaAction::class,
+                'fixedVerifyCode' => 'TeSt',
+            ],
         ];
     }
 }
