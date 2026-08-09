@@ -31,30 +31,7 @@ use yii\web\View;
 class ImageValidatorClientScript extends FileValidatorClientScript
 {
     /**
-     * @return array{
-     *   message?: string,
-     *   skipOnEmpty: bool,
-     *   uploadRequired?: string,
-     *   mimeTypes?: list<JsExpression>,
-     *   wrongMimeType?: string,
-     *   extensions?: list<string>,
-     *   wrongExtension?: string,
-     *   minSize?: int,
-     *   tooSmall?: string,
-     *   maxSize?: int,
-     *   tooBig?: string,
-     *   maxFiles?: int,
-     *   tooMany?: string,
-     *   notImage?: string,
-     *   minWidth?: int,
-     *   underWidth?: string,
-     *   maxWidth?: int,
-     *   overWidth?: string,
-     *   minHeight?: int,
-     *   underHeight?: string,
-     *   maxHeight?: int,
-     *   overHeight?: string,
-     * }
+     * @return array<string, bool|int|list<JsExpression|string>|string>
      */
     public function getClientOptions(Validator $validator, Model $model, string $attribute): array
     {

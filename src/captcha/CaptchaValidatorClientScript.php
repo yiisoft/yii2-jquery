@@ -34,7 +34,25 @@ class CaptchaValidatorClientScript extends BaseObject implements ClientValidator
      */
     public function getClientOptions(Validator $validator, Model $model, string $attribute): array
     {
-        return $validator->getClientOptions($model, $attribute);
+        $captcha = $validator->createCaptchaAction();
+
+        $code = $captcha->getVerifyCode(false);
+
+        $options = [
+            'hash' => $captcha->generateValidationHash($validator->caseSensitive ? $code : strtolower($code)),
+            'hashKey' => 'yiiCaptcha/' . $captcha->getUniqueId(),
+            'caseSensitive' => $validator->caseSensitive,
+            'message' => $validator->getFormattedClientMessage(
+                $validator->message,
+                ['attribute' => $model->getAttributeLabel($attribute)],
+            ),
+        ];
+
+        if ($validator->skipOnEmpty) {
+            $options['skipOnEmpty'] = 1;
+        }
+
+        return $options;
     }
 
     public function register(Validator $validator, Model $model, string $attribute, View $view): string
