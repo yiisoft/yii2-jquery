@@ -18,7 +18,7 @@
     },
     "require-dev": {
         "maglnet/composer-require-checker": "^4.17",
-        "php-forge/foxy": "^0.2",
+        "php-forge/foxy": "^0.3",
         "phpstan/extension-installer": "^1.4",
         "phpstan/phpstan-strict-rules": "^2.0.3",
         "phpunit/phpunit": "^11.5",
