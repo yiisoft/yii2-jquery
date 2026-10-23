@@ -18,13 +18,13 @@
     },
     "require-dev": {
         "maglnet/composer-require-checker": "^4.17",
-        "php-forge/foxy": "^0.2",
+        "php-forge/foxy": "^0.4",
         "phpstan/extension-installer": "^1.4",
         "phpstan/phpstan-strict-rules": "^2.0.3",
         "phpunit/phpunit": "^11.5",
         "rector/rector": "^2.1",
         "symplify/easy-coding-standard": "^13.0",
-        "yii2-extensions/phpstan": "^0.4"
+        "yii2-extensions/phpstan": "^0.5"
     },
     "autoload": {
         "psr-4": {
